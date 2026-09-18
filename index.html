@@ -1,0 +1,1829 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>NextGenElie | Graphic Designer & IT Trainer</title>
+
+    <meta name="description"
+          content="NextGenElie - Graphic Designer, IT Trainer and Data Analyst.">
+
+    <style>
+
+        /* =========================
+           RESET
+        ========================= */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #080808;
+            color: #ffffff;
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        img {
+            max-width: 100%;
+            display: block;
+        }
+
+
+        /* =========================
+           VARIABLES
+        ========================= */
+
+        :root {
+            --background: #080808;
+            --card: #111111;
+            --card2: #151515;
+            --text: #ffffff;
+            --muted: #aaaaaa;
+            --accent: #b8ff3d;
+            --border: #292929;
+        }
+
+
+        /* =========================
+           NAVIGATION
+        ========================= */
+
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            background: rgba(8, 8, 8, 0.94);
+            border-bottom: 1px solid var(--border);
+            backdrop-filter: blur(10px);
+        }
+
+        .navbar {
+            max-width: 1200px;
+            margin: auto;
+            padding: 18px 25px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 800;
+        }
+
+        .logo span {
+            color: var(--accent);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 25px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: #dddddd;
+            font-size: 14px;
+            transition: 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--accent);
+        }
+
+        .language-btn {
+            border: 1px solid var(--accent);
+            background: transparent;
+            color: var(--accent);
+            padding: 7px 12px;
+            border-radius: 20px;
+            cursor: pointer;
+            margin-left: 20px;
+        }
+
+        .menu-btn {
+            display: none;
+            font-size: 26px;
+            cursor: pointer;
+            color: white;
+        }
+
+
+        /* =========================
+           GENERAL
+        ========================= */
+
+        section {
+            max-width: 1200px;
+            margin: auto;
+            padding: 100px 25px;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-title h2 {
+            font-size: 38px;
+            margin-bottom: 10px;
+        }
+
+        .section-title span {
+            color: var(--accent);
+        }
+
+        .section-title p {
+            color: var(--muted);
+        }
+
+
+        /* =========================
+           HERO
+        ========================= */
+
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding-top: 120px;
+        }
+
+        .hero-content {
+            max-width: 850px;
+        }
+
+        .hero-small {
+            color: var(--accent);
+            font-weight: bold;
+            letter-spacing: 2px;
+            margin-bottom: 15px;
+        }
+
+        .hero h1 {
+            font-size: clamp(45px, 8vw, 85px);
+            line-height: 1;
+            margin-bottom: 20px;
+        }
+
+        .hero h1 span {
+            color: var(--accent);
+        }
+
+        .hero h2 {
+            font-size: 24px;
+            color: #dddddd;
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            max-width: 650px;
+            margin: auto;
+            color: var(--muted);
+            font-size: 17px;
+        }
+
+        .hero-buttons {
+            margin-top: 35px;
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 13px 24px;
+            border-radius: 7px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .btn-primary {
+            background: var(--accent);
+            color: #000;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+        }
+
+        .btn-outline {
+            border: 1px solid var(--accent);
+            color: var(--accent);
+        }
+
+        .btn-outline:hover {
+            background: var(--accent);
+            color: #000;
+        }
+
+
+        /* =========================
+           ABOUT
+        ========================= */
+
+        .about-container {
+            display: grid;
+            grid-template-columns: 1fr 1.3fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .profile-photo {
+            width: 100%;
+            max-width: 380px;
+            height: 430px;
+            margin: auto;
+            border: 1px solid var(--border);
+            background: var(--card);
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        .profile-photo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .photo-placeholder {
+            color: #666;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .about-text h3 {
+            font-size: 30px;
+            margin-bottom: 20px;
+        }
+
+        .about-text p {
+            color: var(--muted);
+            margin-bottom: 15px;
+        }
+
+        .about-info {
+            margin-top: 25px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+        }
+
+        .info-box {
+            background: var(--card);
+            padding: 15px;
+            border: 1px solid var(--border);
+            border-radius: 8px;
+        }
+
+        .info-box strong {
+            display: block;
+            color: var(--accent);
+            margin-bottom: 4px;
+        }
+
+
+        /* =========================
+           SKILLS
+        ========================= */
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .skill-card {
+            background: var(--card);
+            padding: 30px;
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            transition: 0.3s;
+        }
+
+        .skill-card:hover {
+            transform: translateY(-6px);
+            border-color: var(--accent);
+        }
+
+        .skill-icon {
+            font-size: 35px;
+            margin-bottom: 15px;
+        }
+
+        .skill-card h3 {
+            margin-bottom: 10px;
+        }
+
+        .skill-card p {
+            color: var(--muted);
+            font-size: 14px;
+        }
+
+
+        /* =========================
+           SERVICES
+        ========================= */
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .service-card {
+            background: var(--card);
+            padding: 30px;
+            border-radius: 12px;
+            border: 1px solid var(--border);
+        }
+
+        .service-card h3 {
+            color: var(--accent);
+            margin-bottom: 12px;
+        }
+
+        .service-card p {
+            color: var(--muted);
+        }
+
+
+        /* =========================
+           PROJECTS
+        ========================= */
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .project-card {
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            overflow: hidden;
+            transition: 0.3s;
+        }
+
+        .project-card:hover {
+            transform: translateY(-7px);
+            border-color: var(--accent);
+        }
+
+        .project-image {
+            height: 220px;
+            background: #181818;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        .project-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .image-placeholder {
+            color: #666;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .project-content {
+            padding: 22px;
+        }
+
+        .project-category {
+            color: var(--accent);
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: bold;
+        }
+
+        .project-content h3 {
+            margin: 8px 0 18px;
+            font-size: 21px;
+        }
+
+        .project-link {
+            display: inline-block;
+            border: 1px solid var(--accent);
+            color: var(--accent);
+            padding: 9px 15px;
+            border-radius: 6px;
+            font-size: 13px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .project-link:hover {
+            background: var(--accent);
+            color: #000;
+        }
+
+
+        /* =========================
+           EXPERIENCE
+        ========================= */
+
+        .timeline {
+            max-width: 800px;
+            margin: auto;
+        }
+
+        .timeline-item {
+            border-left: 2px solid var(--accent);
+            padding: 0 0 35px 30px;
+            position: relative;
+        }
+
+        .timeline-item::before {
+            content: "";
+            position: absolute;
+            left: -7px;
+            top: 0;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: var(--accent);
+        }
+
+        .timeline-item h3 {
+            margin-bottom: 5px;
+        }
+
+        .timeline-item span {
+            color: var(--accent);
+            font-size: 14px;
+        }
+
+        .timeline-item p {
+            color: var(--muted);
+            margin-top: 8px;
+        }
+
+
+        /* =========================
+           CONTACT
+        ========================= */
+
+        .contact-container {
+            max-width: 800px;
+            margin: auto;
+            text-align: center;
+        }
+
+        .contact-container p {
+            color: var(--muted);
+            margin-bottom: 30px;
+        }
+
+        .contact-boxes {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+
+        .contact-box {
+            background: var(--card);
+            border: 1px solid var(--border);
+            padding: 25px;
+            border-radius: 10px;
+        }
+
+        .contact-box h3 {
+            color: var(--accent);
+            margin-bottom: 8px;
+        }
+
+
+        /* =========================
+           FOOTER
+        ========================= */
+
+        footer {
+            border-top: 1px solid var(--border);
+            padding: 30px 20px;
+            text-align: center;
+            color: var(--muted);
+        }
+
+        footer span {
+            color: var(--accent);
+        }
+
+
+        /* =========================
+           WHATSAPP
+        ========================= */
+
+        .whatsapp {
+            position: fixed;
+            right: 20px;
+            bottom: 20px;
+            width: 55px;
+            height: 55px;
+            border-radius: 50%;
+            background: #25D366;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 25px;
+            z-index: 999;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.4);
+        }
+
+
+        /* =========================
+           MOBILE
+        ========================= */
+
+        @media (max-width: 900px) {
+
+            .skills-grid,
+            .services-grid,
+            .projects-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .about-container {
+                grid-template-columns: 1fr;
+            }
+        }
+
+
+        @media (max-width: 650px) {
+
+            .navbar {
+                padding: 15px 20px;
+            }
+
+            .menu-btn {
+                display: block;
+            }
+
+            .nav-links {
+                position: absolute;
+                top: 70px;
+                left: 0;
+                width: 100%;
+                background: #0c0c0c;
+                display: none;
+                flex-direction: column;
+                padding: 25px;
+                border-bottom: 1px solid var(--border);
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .language-btn {
+                margin-left: 10px;
+            }
+
+            section {
+                padding: 80px 20px;
+            }
+
+            .section-title h2 {
+                font-size: 30px;
+            }
+
+            .skills-grid,
+            .services-grid,
+            .projects-grid,
+            .contact-boxes {
+                grid-template-columns: 1fr;
+            }
+
+            .about-info {
+                grid-template-columns: 1fr;
+            }
+
+            .hero h1 {
+                font-size: 55px;
+            }
+
+            .hero h2 {
+                font-size: 20px;
+            }
+        }
+
+    </style>
+</head>
+
+
+<body>
+
+
+<!-- =========================
+     NAVIGATION
+========================= -->
+
+<header>
+
+    <nav class="navbar">
+
+        <a href="#home" class="logo">
+            NextGen<span>Elie</span>
+        </a>
+
+        <ul class="nav-links" id="navLinks">
+
+            <li>
+                <a href="#home" data-en="Home" data-fr="Accueil">
+                    Home
+                </a>
+            </li>
+
+            <li>
+                <a href="#about" data-en="About" data-fr="À propos">
+                    About
+                </a>
+            </li>
+
+            <li>
+                <a href="#skills" data-en="Skills" data-fr="Compétences">
+                    Skills
+                </a>
+            </li>
+
+            <li>
+                <a href="#services" data-en="Services" data-fr="Services">
+                    Services
+                </a>
+            </li>
+
+            <li>
+                <a href="#projects" data-en="Projects" data-fr="Projets">
+                    Projects
+                </a>
+            </li>
+
+            <li>
+                <a href="#experience" data-en="Experience" data-fr="Expérience">
+                    Experience
+                </a>
+            </li>
+
+            <li>
+                <a href="#contact" data-en="Contact" data-fr="Contact">
+                    Contact
+                </a>
+            </li>
+
+        </ul>
+
+        <div>
+            <button class="language-btn" id="languageBtn">
+                FR
+            </button>
+
+            <span class="menu-btn" id="menuBtn">
+                ☰
+            </span>
+        </div>
+
+    </nav>
+
+</header>
+
+
+
+<!-- =========================
+     HOME
+========================= -->
+
+<section class="hero" id="home">
+
+    <div class="hero-content">
+
+        <div class="hero-small">
+            NEXTGENELIE
+        </div>
+
+        <h1>
+            NextGen<span>Elie</span>
+        </h1>
+
+        <h2
+            data-en="Graphic Designer • IT Trainer • Data Analyst"
+            data-fr="Graphiste • Formateur IT • Analyste de données">
+            Graphic Designer • IT Trainer • Data Analyst
+        </h2>
+
+        <p
+            data-en="I create visual experiences, teach digital skills and transform data into useful insights."
+            data-fr="Je crée des expériences visuelles, j'enseigne les compétences numériques et je transforme les données en informations utiles.">
+
+            I create visual experiences, teach digital skills and transform data into useful insights.
+
+        </p>
+
+        <div class="hero-buttons">
+
+            <a href="#projects"
+               class="btn btn-primary"
+               data-en="View My Work"
+               data-fr="Voir mes projets">
+                View My Work
+            </a>
+
+            <a href="#contact"
+               class="btn btn-outline"
+               data-en="Contact Me"
+               data-fr="Me contacter">
+                Contact Me
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================
+     ABOUT
+========================= -->
+
+<section id="about">
+
+    <div class="section-title">
+
+        <h2>
+            About <span>Me</span>
+        </h2>
+
+        <p
+            data-en="Get to know me"
+            data-fr="Découvrez mon profil">
+            Get to know me
+        </p>
+
+    </div>
+
+
+    <div class="about-container">
+
+
+        <!-- PROFILE PHOTO -->
+
+        <div class="profile-photo">
+
+            <img
+                src="images/profilepics.jpg"
+                alt="NextGenElie"
+                onerror="this.style.display='none'; document.getElementById('profilePlaceholder').style.display='block';">
+
+            <div
+                class="photo-placeholder"
+                id="profilePlaceholder"
+                style="display:none;">
+
+                Add your profile photo here:<br>
+                <strong>images/profile.jpg</strong>
+
+            </div>
+
+        </div>
+
+
+        <!-- ABOUT TEXT -->
+
+        <div class="about-text">
+
+            <h3
+                data-en="Creative. Technical. Always Learning."
+                data-fr="Créatif. Technique. Toujours en apprentissage.">
+
+                Creative. Technical. Always Learning.
+
+            </h3>
+
+            <p
+                data-en="I am NextGenElie, a Graphic Designer, IT Trainer and Data Analyst with 4–5 years of experience."
+                data-fr="Je suis NextGenElie, graphiste, formateur IT et analyste de données avec 4 à 5 ans d'expérience.">
+
+                I am NextGenElie, a Graphic Designer, IT Trainer and Data Analyst with 4–5 years of experience.
+
+            </p>
+
+            <p
+                data-en="My goal is to combine creativity and technology to help people, businesses and organizations communicate, learn and make better decisions."
+                data-fr="Mon objectif est de combiner créativité et technologie pour aider les personnes, entreprises et organisations à communiquer, apprendre et prendre de meilleures décisions.">
+
+                My goal is to combine creativity and technology to help people, businesses and organizations communicate, learn and make better decisions.
+
+            </p>
+
+
+            <div class="about-info">
+
+                <div class="info-box">
+
+                    <strong
+                        data-en="Education"
+                        data-fr="Formation">
+                        Education
+                    </strong>
+
+                    University
+
+                </div>
+
+
+                <div class="info-box">
+
+                    <strong
+                        data-en="Experience"
+                        data-fr="Expérience">
+                        Experience
+                    </strong>
+
+                    4–5 Years
+
+                </div>
+
+
+                <div class="info-box">
+
+                    <strong
+                        data-en="Profession"
+                        data-fr="Profession">
+                        Profession
+                    </strong>
+
+                    Graphic Designer
+
+                </div>
+
+
+                <div class="info-box">
+
+                    <strong
+                        data-en="Location"
+                        data-fr="Localisation">
+                        Location
+                    </strong>
+
+                    Guinea
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================
+     SKILLS
+========================= -->
+
+<section id="skills">
+
+    <div class="section-title">
+
+        <h2>
+            My <span>Skills</span>
+        </h2>
+
+        <p
+            data-en="Tools and technologies I work with"
+            data-fr="Outils et technologies que j'utilise">
+
+            Tools and technologies I work with
+
+        </p>
+
+    </div>
+
+
+    <div class="skills-grid">
+
+
+        <div class="skill-card">
+
+            <div class="skill-icon">🎨</div>
+
+            <h3>
+                Adobe Photoshop
+            </h3>
+
+            <p
+                data-en="Graphic design, photo editing, social media visuals and branding."
+                data-fr="Design graphique, retouche photo, visuels pour réseaux sociaux et branding.">
+
+                Graphic design, photo editing, social media visuals and branding.
+
+            </p>
+
+        </div>
+
+
+        <div class="skill-card">
+
+            <div class="skill-icon">🎬</div>
+
+            <h3>
+                Adobe Premiere Pro
+            </h3>
+
+            <p
+                data-en="Video editing, promotional content and digital storytelling."
+                data-fr="Montage vidéo, contenu promotionnel et narration digitale.">
+
+                Video editing, promotional content and digital storytelling.
+
+            </p>
+
+        </div>
+
+
+        <div class="skill-card">
+
+            <div class="skill-icon">💻</div>
+
+            <h3
+                data-en="IT Training"
+                data-fr="Formation IT">
+                IT Training
+            </h3>
+
+            <p
+                data-en="Computer basics, software, internet and digital skills training."
+                data-fr="Formation en informatique, logiciels, internet et compétences numériques.">
+
+                Computer basics, software, internet and digital skills training.
+
+            </p>
+
+        </div>
+
+
+        <div class="skill-card">
+
+            <div class="skill-icon">📊</div>
+
+            <h3
+                data-en="Data Analysis"
+                data-fr="Analyse de données">
+                Data Analysis
+            </h3>
+
+            <p
+                data-en="Excel, Power BI, SQL and data visualization."
+                data-fr="Excel, Power BI, SQL et visualisation des données.">
+
+                Excel, Power BI, SQL and data visualization.
+
+            </p>
+
+        </div>
+
+
+        <div class="skill-card">
+
+            <div class="skill-icon">📈</div>
+
+            <h3>
+                Microsoft Excel
+            </h3>
+
+            <p
+                data-en="Data cleaning, formulas, dashboards and reporting."
+                data-fr="Nettoyage des données, formules, tableaux de bord et rapports.">
+
+                Data cleaning, formulas, dashboards and reporting.
+
+            </p>
+
+        </div>
+
+
+        <div class="skill-card">
+
+            <div class="skill-icon">🗄️</div>
+
+            <h3>
+                SQL
+            </h3>
+
+            <p
+                data-en="Working with databases, queries and structured data."
+                data-fr="Travail avec les bases de données, requêtes et données structurées.">
+
+                Working with databases, queries and structured data.
+
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================
+     SERVICES
+========================= -->
+
+<section id="services">
+
+    <div class="section-title">
+
+        <h2>
+            My <span>Services</span>
+        </h2>
+
+        <p
+            data-en="What I can do for you"
+            data-fr="Ce que je peux faire pour vous">
+
+            What I can do for you
+
+        </p>
+
+    </div>
+
+
+    <div class="services-grid">
+
+
+        <div class="service-card">
+
+            <h3
+                data-en="Graphic Design"
+                data-fr="Design Graphique">
+                Graphic Design
+            </h3>
+
+            <p
+                data-en="Logos, flyers, posters, social media designs, banners and branding."
+                data-fr="Logos, flyers, affiches, designs pour réseaux sociaux, bannières et branding.">
+
+                Logos, flyers, posters, social media designs, banners and branding.
+
+            </p>
+
+        </div>
+
+
+        <div class="service-card">
+
+            <h3
+                data-en="Video Editing"
+                data-fr="Montage Vidéo">
+                Video Editing
+            </h3>
+
+            <p
+                data-en="Professional video editing for social media, businesses and events."
+                data-fr="Montage vidéo professionnel pour réseaux sociaux, entreprises et événements.">
+
+                Professional video editing for social media, businesses and events.
+
+            </p>
+
+        </div>
+
+
+        <div class="service-card">
+
+            <h3
+                data-en="IT Training"
+                data-fr="Formation Informatique">
+                IT Training
+            </h3>
+
+            <p
+                data-en="Computer, internet, Microsoft Office and digital skills training."
+                data-fr="Formation en informatique, internet, Microsoft Office et compétences numériques.">
+
+                Computer, internet, Microsoft Office and digital skills training.
+
+            </p>
+
+        </div>
+
+
+        <div class="service-card">
+
+            <h3
+                data-en="Data Analysis"
+                data-fr="Analyse de Données">
+                Data Analysis
+            </h3>
+
+            <p
+                data-en="Excel dashboards, Power BI reports, SQL analysis and data visualization."
+                data-fr="Tableaux de bord Excel, rapports Power BI, analyse SQL et visualisation des données.">
+
+                Excel dashboards, Power BI reports, SQL analysis and data visualization.
+
+            </p>
+
+        </div>
+
+
+        <div class="service-card">
+
+            <h3
+                data-en="Digital Support"
+                data-fr="Support Digital">
+                Digital Support
+            </h3>
+
+            <p
+                data-en="Technical assistance and support with everyday digital tasks."
+                data-fr="Assistance technique et accompagnement pour les tâches numériques quotidiennes.">
+
+                Technical assistance and support with everyday digital tasks.
+
+            </p>
+
+        </div>
+
+
+        <div class="service-card">
+
+            <h3
+                data-en="Digital Projects"
+                data-fr="Projets Numériques">
+                Digital Projects
+            </h3>
+
+            <p
+                data-en="Creative and technology-based solutions for individuals and businesses."
+                data-fr="Solutions créatives et technologiques pour particuliers et entreprises.">
+
+                Creative and technology-based solutions for individuals and businesses.
+
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================
+     PROJECTS
+========================= -->
+
+<section id="projects">
+
+    <div class="section-title">
+
+        <h2>
+            My <span>Projects</span>
+        </h2>
+
+        <p
+            data-en="Explore my work"
+            data-fr="Découvrez mes réalisations">
+
+            Explore my work
+
+        </p>
+
+    </div>
+
+
+    <div class="projects-grid">
+
+
+        <!-- PROJECT 01 -->
+
+        <div class="project-card">
+
+            <div class="project-image">
+
+                <img
+                    src="images/project-01.jpg"
+                    alt="Brand and Social Visuals"
+                    onerror="this.style.display='none';">
+
+                <div class="image-placeholder">
+                    PROJECT IMAGE
+                </div>
+
+            </div>
+
+            <div class="project-content">
+
+                <div class="project-category">
+                    Graphic Design
+                </div>
+
+                <h3
+                    data-en="Brand & Social Visuals"
+                    data-fr="Visuels de Marque & Réseaux Sociaux">
+
+                    Brand & Social Visuals
+
+                </h3>
+
+                <!-- PUT YOUR GOOGLE DRIVE LINK HERE -->
+
+                <a
+                    href="https://drive.google.com/drive/folders/1_DlnQcF0eWoHMEl1iO5Ta2yU5bHAtrzO"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="project-link"
+                    data-en="View Project →"
+                    data-fr="Voir le projet →">
+
+                    View Project →
+
+                </a>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- PROJECT 02 -->
+
+        <div class="project-card">
+
+            <div class="project-image">
+
+                <img
+                    src="images/project-02.jpg"
+                    alt="Promotional Campaign"
+                    onerror="this.style.display='none';">
+
+                <div class="image-placeholder">
+                    PROJECT IMAGE
+                </div>
+
+            </div>
+
+            <div class="project-content">
+
+                <div class="project-category">
+                    Graphic Design
+                </div>
+
+                <h3
+                    data-en="Promotional Campaign"
+                    data-fr="Campagne Promotionnelle">
+
+                    Promotional Campaign
+
+                </h3>
+
+                <a
+                    href="https://drive.google.com/drive/folders/1iFAcKJMhotieCJf6hN22liO11j_Hi-Ib"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="project-link"
+                    data-en="View Project →"
+                    data-fr="Voir le projet →">
+
+                    View Project →
+
+                </a>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- PROJECT 03 -->
+
+        <div class="project-card">
+
+            <div class="project-image">
+
+                <img
+                    src="images/project-03.jpg"
+                    alt="Digital Video Content"
+                    onerror="this.style.display='none';">
+
+                <div class="image-placeholder">
+                    PROJECT IMAGE
+                </div>
+
+            </div>
+
+            <div class="project-content">
+
+                <div class="project-category">
+                    Video Editing
+                </div>
+
+                <h3
+                    data-en="Digital Video Content"
+                    data-fr="Contenu Vidéo Digital">
+
+                    Digital Video Content
+
+                </h3>
+
+                <a
+                    href="https://drive.google.com/drive/folders/1hKJ0ZNmO86bcknO2F_pxxmqnOVGif0za"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="project-link"
+                    data-en="View Project →"
+                    data-fr="Voir le projet →">
+
+                    View Project →
+
+                </a>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- PROJECT 04 -->
+
+        <div class="project-card">
+
+            <div class="project-image">
+
+                <img
+                    src="images/project-04.jpg"
+                    alt="Excel Data Dashboard"
+                    onerror="this.style.display='none';">
+
+                <div class="image-placeholder">
+                    PROJECT IMAGE
+                </div>
+
+            </div>
+
+            <div class="project-content">
+
+                <div class="project-category">
+                    Data Analysis
+                </div>
+
+                <h3
+                    data-en="Excel Data Dashboard"
+                    data-fr="Tableau de Bord Excel">
+
+                    Excel Data Dashboard
+
+                </h3>
+
+                <a
+                    href="https://drive.google.com/drive/folders/1BwECtGGDm8SWw9usS0MI2M0a5AuaaVe8"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="project-link"
+                    data-en="View Project →"
+                    data-fr="Voir le projet →">
+
+                    View Project →
+
+                </a>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- PROJECT 05 -->
+
+        <div class="project-card">
+
+            <div class="project-image">
+
+                <img
+                    src="images/project-05.jpg"
+                    alt="Power BI Dashboard"
+                    onerror="this.style.display='none';">
+
+                <div class="image-placeholder">
+                    PROJECT IMAGE
+                </div>
+
+            </div>
+
+            <div class="project-content">
+
+                <div class="project-category">
+                    Data Analysis
+                </div>
+
+                <h3
+                    data-en="Power BI Dashboard"
+                    data-fr="Tableau de Bord Power BI">
+
+                    Power BI Dashboard
+
+                </h3>
+
+                <a
+                    href="https://drive.google.com/drive/folders/1rdSpyQmSh5NgO6nofUMSX74RktXYU6dS"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="project-link"
+                    data-en="View Project →"
+                    data-fr="Voir le projet →">
+
+                    View Project →
+
+                </a>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- PROJECT 06 -->
+
+        <div class="project-card">
+
+            <div class="project-image">
+
+                <img
+                    src="images/project-06.jpg"
+                    alt="SQL Data Project"
+                    onerror="this.style.display='none';">
+
+                <div class="image-placeholder">
+                    PROJECT IMAGE
+                </div>
+
+            </div>
+
+            <div class="project-content">
+
+                <div class="project-category">
+                    Data Analysis
+                </div>
+
+                <h3
+                    data-en="SQL Data Project"
+                    data-fr="Projet de Données SQL">
+
+                    SQL Data Project
+
+                </h3>
+
+                <a
+                    href="https://drive.google.com/drive/folders/1mtUa6iCc2V3GTPS1nEZ1Ggy2R81UF71u"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="project-link"
+                    data-en="View Project →"
+                    data-fr="Voir le projet →">
+
+                    View Project →
+
+                </a>
+
+            </div>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================
+     EXPERIENCE
+========================= -->
+
+<section id="experience">
+
+    <div class="section-title">
+
+        <h2>
+            My <span>Experience</span>
+        </h2>
+
+        <p
+            data-en="My professional journey"
+            data-fr="Mon parcours professionnel">
+
+            My professional journey
+
+        </p>
+
+    </div>
+
+
+    <div class="timeline">
+
+
+        <div class="timeline-item">
+
+            <h3>
+                Graphic Design & Digital Content
+            </h3>
+
+            <span>
+                4–5 Years
+            </span>
+
+            <p
+                data-en="Creating visual content, promotional materials, social media graphics and digital designs."
+                data-fr="Création de contenus visuels, supports promotionnels, graphiques pour réseaux sociaux et designs numériques.">
+
+                Creating visual content, promotional materials, social media graphics and digital designs.
+
+            </p>
+
+        </div>
+
+
+        <div class="timeline-item">
+
+            <h3
+                data-en="Computer & Digital Skills Trainer"
+                data-fr="Formateur en Informatique et Compétences Numériques">
+
+                Computer & Digital Skills Trainer
+
+            </h3>
+
+            <span>
+                Experience
+            </span>
+
+            <p
+                data-en="Teaching computer basics, software, internet usage and digital skills."
+                data-fr="Enseignement des bases informatiques, logiciels, internet et compétences numériques.">
+
+                Teaching computer basics, software, internet usage and digital skills.
+
+            </p>
+
+        </div>
+
+
+        <div class="timeline-item">
+
+            <h3>
+                University
+            </h3>
+
+            <span
+                data-en="Education"
+                data-fr="Formation">
+
+                Education
+
+            </span>
+
+            <p
+                data-en="University education and continuous professional development."
+                data-fr="Formation universitaire et développement professionnel continu.">
+
+                University education and continuous professional development.
+
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================
+     CONTACT
+========================= -->
+
+<section id="contact">
+
+    <div class="section-title">
+
+        <h2>
+            Contact <span>Me</span>
+        </h2>
+
+        <p
+            data-en="Let's work together"
+            data-fr="Travaillons ensemble">
+
+            Let's work together
+
+        </p>
+
+    </div>
+
+
+    <div class="contact-container">
+
+        <p
+            data-en="Have a project, training need or collaboration idea? Get in touch with me."
+            data-fr="Vous avez un projet, un besoin de formation ou une idée de collaboration ? Contactez-moi.">
+
+            Have a project, training need or collaboration idea?
+            Get in touch with me.
+
+        </p>
+
+
+        <div class="contact-boxes">
+
+
+            <div class="contact-box">
+
+                <h3>
+                    WhatsApp
+                </h3>
+
+                <p>
+                    +224 620 051 118
+                </p>
+
+            </div>
+
+
+            <div class="contact-box">
+
+                <h3>
+                    Location
+                </h3>
+
+                <p>
+                    Guinea
+                </p>
+
+            </div>
+
+
+        </div>
+
+
+        <a
+            href="https://wa.me/224620051118"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="btn btn-primary"
+            data-en="Message Me on WhatsApp"
+            data-fr="M'écrire sur WhatsApp">
+
+            Message Me on WhatsApp
+
+        </a>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================
+     FOOTER
+========================= -->
+
+<footer>
+
+    © 2026
+    <span>NextGenElie</span>.
+    
+    <span
+        data-en="All Rights Reserved."
+        data-fr="Tous droits réservés.">
+
+        All Rights Reserved.
+
+    </span>
+
+</footer>
+
+
+
+<!-- =========================
+     FLOATING WHATSAPP
+========================= -->
+
+<a
+    href="https://wa.me/224620051118"
+    target="_blank"
+    rel="noopener noreferrer"
+    class="whatsapp"
+    aria-label="WhatsApp">
+
+    ☎
+
+</a>
+
+
+
+<!-- =========================
+     JAVASCRIPT
+========================= -->
+
+<script>
+
+    /* =========================
+       MOBILE MENU
+    ========================= */
+
+    const menuBtn = document.getElementById("menuBtn");
+    const navLinks = document.getElementById("navLinks");
+
+    menuBtn.addEventListener("click", function () {
+
+        navLinks.classList.toggle("active");
+
+    });
+
+
+    /* Close menu after clicking */
+
+    document.querySelectorAll(".nav-links a").forEach(function(link) {
+
+        link.addEventListener("click", function() {
+
+            navLinks.classList.remove("active");
+
+        });
+
+    });
+
+
+
+    /* =========================
+       LANGUAGE SWITCHER
+    ========================= */
+
+    const languageBtn = document.getElementById("languageBtn");
+
+    let currentLanguage = "en";
+
+
+    languageBtn.addEventListener("click", function() {
+
+        currentLanguage = currentLanguage === "en" ? "fr" : "en";
+
+        document.querySelectorAll("[data-en]").forEach(function(element) {
+
+            element.textContent = element.getAttribute(
+                "data-" + currentLanguage
+            );
+
+        });
+
+
+        languageBtn.textContent =
+            currentLanguage === "en" ? "FR" : "EN";
+
+    });
+
+</script>
+
+
+</body>
+</html>
+
+
+
+             
